@@ -9,10 +9,10 @@ const Home: React.FC = () => {
               Welcome to My Testing Application!
             </h1>
             <p className="mt-4 text-xl text-white">
-              We're glad you're here. Enjoy the Silence 😊
+              We&apos;re glad you&apos;re here. Enjoy the Silence 😊
             </p>
             <button className="mt-6 px-6 py-3 bg-white text-blue-500 rounded-full font-semibold hover:bg-gray-200 transition">
-              Get Started
+               Get Started
             </button>
         </div>
       </main>
