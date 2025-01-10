@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home: React.FC = () => {
+const Index: React.FC = () => {
   return (
     <div className="flex flex-col h-screen">
       <main className="flex-grow flex items-center justify-center bg-gradient-to-r from-blue-800 to-purple-800">
@@ -19,4 +19,4 @@ const Home: React.FC = () => {
     </div>
   )
 }
-export default Home;
+export default Index;
