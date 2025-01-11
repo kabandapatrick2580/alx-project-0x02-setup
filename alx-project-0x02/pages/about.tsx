@@ -1,17 +1,36 @@
+import Button from "@/components/common/Button";
+
 const About: React.FC = () => {
+    const handleClick = (size: string, shape: string) => {
+        alert(`Button size: ${size}, Button shape: ${shape}`);
+    }
     return (
-        <div className="flex flex-col h-screen">
-            <main className="flex-grow flex items-center justify-center bg-gradient-to-r from-blue-800 to-purple-800">
-                <div className="text-center">
-                    <h1 className="text-5xl font-bold text-white">
-                        About Me
-                    </h1>
-                    <p className="mt-4 text-xl text-white">
-                    Thisngs are about to get interesting! 😊
-                    </p>
-                </div>
-            </main>
+        <div className="p-6">
+            <h1 className="text-2xl font-bold mb-4">
+                About Page
+            </h1>
+            <div className="space-y-4">
+                <Button
+                    size="small"
+                    shape="rounded-sm"
+                    label="Small Rounded Button"
+                    onClick={() => handleClick('small', 'rounded-sm')}
+                />
+
+                <Button
+                    size="medium"
+                    shape="rounded-md"
+                    label="Medium Rounded Button"
+                    onClick={() => handleClick('medium', 'rounded-md')}
+                />
+                <Button
+                    size="large"
+                    shape="rounded-full"
+                    label="Large Rounded Button"
+                    onClick={() => handleClick('large', 'rounded-full')}
+                />
+            </div>
         </div>
-    )
-}
+    );
+};
 export default About;

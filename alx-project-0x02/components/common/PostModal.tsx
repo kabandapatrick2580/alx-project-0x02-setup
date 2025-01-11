@@ -1,4 +1,5 @@
 import { PostModalProps } from '@/interfaces';
+import { useState } from 'react';
 
 const PostModal: React.FC<PostModalProps> = ({ isOpen, onClose, onSubmmit }) => {
     const [title, setTitle] = useState('');
