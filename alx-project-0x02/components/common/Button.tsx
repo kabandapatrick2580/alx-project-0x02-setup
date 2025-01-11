@@ -1,6 +1,6 @@
-import { ButtonProps } from '@/interfaces';
+import { ButtonProps } from "../../interfaces";
 
-const Button: React.FC<ButtonProps> = ({ size = 'medium', shape = 'rounded-md', label, onClick, className }) => {
+const Button: React.FC<ButtonProps> = ({ size = 'medium', shape = 'rounded-md', label, onClick, className="" }) => {
 
     // define size classes for the purpose of styling
     const sizeClasses = {
