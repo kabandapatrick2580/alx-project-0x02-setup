@@ -35,3 +35,15 @@ export interface PostProps {
 export interface getStaticProps {
     posts: PostProps[];
 }
+
+export interface UserProps {
+    id: number;
+    name: string;
+    email: string;
+    address: {
+      street: string;
+      city: string;
+      zipcode: string;
+    };
+  }
+  
