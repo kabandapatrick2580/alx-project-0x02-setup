@@ -1,18 +1,29 @@
 import Card from "@/components/common/Card";
-import React from "react";
-
-
+import React, { useState } from "react";
+import PostModal from "@/components/common/PostModal";
+import { Post } from "@/interfaces";
 const Home: React.FC = () => {
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleAddPost = (title: string, content: string) => {
+        setPosts((prevPosts) => [...prevPosts, { title, content }]);
+    };
+
     return (
         <div className="flex flex-col items-center justify-center h-screen">
             <h1 className="text-6xl">Welcome to My Testing Application</h1>
-            <p className="mt-4">This is a test project to demonstrate my understanding of Next.js as a React Framework</p>
-            <div className="flex flex-wrap justify-center mt-8">  
-                <Card title="What is Next.js?" content="Next.js is a React Framework that enables functionality such as server-side rendering and generating static websites for React based web applications.">
-                </Card>
-                <Card title="What is Tailwind CSS?" content="Tailwind CSS is a utility-first CSS framework for building custom designs.">
-                </Card>
-            </div>  
+            <button onClick={() => setIsModalOpen(true)} className="mt-4 px-4 py-2 bg-indigo-500 text-white rounded">Create Post</button>
+            <PostModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSubmmit={handleAddPost} />
+            <h2 className="text-4xl mt-8">Posts</h2>
+            {posts.length > 0 ? (
+                posts.map((post, index) => (
+                    <Card key={index} title={post.title} content={post.content} />
+                ))
+                    
+            ) : (
+                <p className="mt-4">No posts yet, Click to add a new one</p>
+            )}
         </div>
     )
 }
