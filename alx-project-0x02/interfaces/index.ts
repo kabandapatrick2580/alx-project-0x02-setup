@@ -31,3 +31,7 @@ export interface PostProps {
     userId: number;
     id: number;
 }
+
+export interface getStaticProps {
+    posts: PostProps[];
+}
